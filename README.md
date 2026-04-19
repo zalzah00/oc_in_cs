@@ -12,52 +12,52 @@ Welcome to the OpenClaw workshop! This guide will take you from a blank screen t
 
 You need a Telegram bot token to act as the interface for your agent.
 
-1. Open Telegram and search for [@BotFather](https://t.me/botfather).
+1. Open Telegram and search for @BotFather.
 2. Send `/newbot` and follow the instructions to name your bot.
 3. **Copy the API Token** provided (it looks like `123456:ABC-DEF...`).
 
-## ⚙️ Step 3: Configure OpenClaw
+## ⚙️ Step 3: Launch the One-Line Installer
 
-In the VS Code terminal, run the following commands one by one:
+Copy and paste this exact command into the VS Code terminal. This downloads OpenClaw and refreshes your terminal settings in one go:
 
-1. **Install OpenClaw:**
+```bash
+curl -sSL [https://openclaw.sh](https://openclaw.sh) | bash && source ~/.bashrc
+```
+
+*Note: If you still see "command not found" after running this, just open a new terminal tab (click the + icon).*
+
+## 🧠 Step 4: Final Configuration
+
+Now, configure your agent's credentials. Replace the text in quotes with your actual keys:
+
+1. **Set your Telegram Token:**
    ```bash
-   npm install -g openclaw
+   openclaw config set providers.telegram.token "PASTE_YOUR_TELEGRAM_TOKEN_HERE"
    ```
 
-2. **Initialize the Config:**
+2. **Set your Gemini API Key:**
    ```bash
-   openclaw init
+   openclaw config set providers.google.apiKey "PASTE_YOUR_GEMINI_API_KEY_HERE"
    ```
-   *Follow the prompts. When it asks for your Telegram token, paste the one you got from BotFather.*
+   *(Get your key at aistudio.google.com)*
 
-3. **Set the AI Brain (Gemini):**
-   ```bash
-   openclaw config set providers.google.apiKey "YOUR_GEMINI_API_KEY"
-   ```
-   *(Get your key at [aistudio.google.com](https://aistudio.google.com))*
+## ⚡ Step 5: Start Your Agent
 
-## ⚡ Step 4: Launch the Agent
-
-Run the gateway to start your bot:
+Run the gateway to bring your bot to life:
 ```bash
 openclaw gateway run
 ```
 
-When you see `[telegram] [default] starting provider`, your bot is alive!
-
-## 🧪 Step 5: Test the Agent
-
-1. Go to Telegram and find the bot you created.
-2. Send it a message: `Who are you?`
-3. Try a search: `Search for the latest news on AI agents.`
-4. Watch the terminal in Codespaces—you will see the "thoughts" of the agent as it processes your request in real-time.
+When you see `[telegram] [default] starting provider`, your bot is ready! 
 
 ---
 
-### 🛠 Troubleshooting for Learners
+### 🧪 Testing Your Bot
+* Find your bot on Telegram and say: `Hello! Who are you?`
+* Try a search task: `What is the current weather in Singapore?`
+* Watch the terminal in Codespaces to see the "Live Reasoning" logs as the agent works.
 
-* **Bot not responding?** Check if you see `[telegram] message received` in your terminal. If not, double-check your Bot Token.
-* **API Errors?** Ensure your Gemini API key is valid and you have "pay-as-you-go" or free-tier credits available.
-* **Terminal stuck?** Press `Ctrl + C` to stop the process and run `openclaw gateway run` again.
-* **Clean Start?** If things get messy, run `killall node` to clear the terminal (note: this may cause the Codespace to refresh).
+### 🛠 Quick Fixes
+* **To stop the bot:** Press `Ctrl + C`. 
+* **To start again:** Type `openclaw gateway run`.
+* **Errors:** If the bot doesn't reply, check the terminal for red error messages—this usually means an API key is missing or has extra spaces.

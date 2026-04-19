@@ -21,7 +21,7 @@ You need a Telegram bot token to act as the interface for your agent.
 Copy and paste this exact command into the VS Code terminal. This downloads OpenClaw and refreshes your terminal settings in one go:
 
 ```bash
-curl -sSL [https://openclaw.sh](https://openclaw.sh) | bash && source ~/.bashrc
+curl -sSL https://openclaw\.sh | bash && source ~/.bashrc
 ```
 
 *Note: If you still see "command not found" after running this, just open a new terminal tab (click the + icon).*

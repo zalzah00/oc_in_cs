@@ -5,7 +5,7 @@ Welcome to the OpenClaw workshop! This guide will take you from a blank screen t
 ## 🚀 Step 1: Prepare Your Environment
 
 1. **Fork this Repository:** Click the **Fork** button at the top right of this page to create your own copy.
-2. **Open in Codespaces:** Click the green **<> Code** button, select the **Codespaces** tab, and click **Create codespace on main**.
+2. **Open in Codespaces:** Click the green **< Code >** button, select the **Codespaces** tab, and click **Create codespace on main**.
 3. **Wait for Setup:** VS Code will open in your browser. Wait for the terminal at the bottom to finish initializing.
 
 ## 🤖 Step 2: Create Your Bot "Identity"
@@ -21,7 +21,7 @@ You need a Telegram bot token to act as the interface for your agent.
 Copy and paste this exact command into the VS Code terminal. This downloads OpenClaw and refreshes your terminal settings in one go:
 
 ```bash
-curl -sSL https://openclaw\.sh | bash && source ~/.bashrc
+curl -fsSL https://openclaw.ai/install.sh | bash && source ~/.bashrc
 ```
 
 *Note: If you still see "command not found" after running this, just open a new terminal tab (click the + icon).*
